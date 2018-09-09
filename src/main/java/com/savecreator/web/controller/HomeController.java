@@ -10,11 +10,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.savecreator.web.entity.Question;
 
 @Controller
-@RequestMapping("/admin/question/")
-public class QuestionController {
+@RequestMapping("/*")
+public class HomeController {
 
+	@RequestMapping("index")
+	public String main(Model model) {
+		
+		return "index";
+	}
 	
-	@RequestMapping("type")
+	@RequestMapping("/login")
+	public String login() {
+		
+		return "login";
+	}
+	
+	/*@RequestMapping("type")
 	public String type(Model model) {
 		
 		model.addAttribute("test","Hello");
@@ -34,9 +45,8 @@ public class QuestionController {
 //	@RequestMapping("reg" method=RequestMethod.POST)
 	public String reg(Question question) {
 		
-		return "redirect.type";
+		return "redirect.type";*/
 		
 
 	}
 
-}

@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.savecreator.web.entity.Question;
 
-@Controller
-@RequestMapping("/member/mypage/")
+@Controller("memberController")
+@RequestMapping("/member/")
 public class MemberController {
 
 	
-	@RequestMapping("main")
+	@RequestMapping("index")
 	public String main(Model model) {
 		
-		return "member.mypage.main";
+		return "member.index";
 	}
 }
 

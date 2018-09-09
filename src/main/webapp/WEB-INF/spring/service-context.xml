@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 스프링 설정 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+<!-- data 서비스에 대한 지시자는 여기에 작성한다. -->
+	<!-- 1. 연결 정보 : 데이터소스 정보-->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<!-- 실제 DB연결하는 목적-->
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+		<property name="url" value="jdbc:sqlserver://211.238.142.251:1433;databaseName=lecture"/>
+		<property name="username" value="sist"/>
+		<property name="password" value="dclass"/>
+		<!-- 풀장을 관리하는 목적 -->
+		<property name="removeAbandoned" value="true"/>
+		<property name="initialSize" value="20"/>
+		<property name="maxActive" value="30" />
+	</bean>
+	
+	<!-- 2. mapper가 여기있다.-->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 다른 객체의 레퍼런스 이름이면 ref -->
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mapperLocations" value="classpath:com/newlecture/web/dao/mybatis/mapper/*.xml"/>
+	</bean>
+	
+	<!-- Factory를 얻어내기위한 도구 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory"/>
+	</bean>
+	
+	<bean class="com.newlecture.web.dao.mybatis.MybatisMemberDao"></bean>
+</beans>
+
+
+
+
+
+

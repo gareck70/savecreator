@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 스프링 설정 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- com.savecreator.webapp.controller 아래 있는 범주를 다 검색해봐라 -->
+	<context:component-scan base-package="com.savecreator.web.controller"></context:component-scan>
+
+	<!-- tiles 설정파일이 어디있는지 find -->
+	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions" value="/WEB-INF/tiles.xml" />
+	</bean>
+	<!-- tiles를 불러와라 -->
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+		<property name="order" value="1" /> <!-- value="1" 은 작업순서 (아래는 2) -->
+	</bean>
+	
+	<!-- controller에서 절대경로인 WEB-INF/VIEWS 를 지웠으니까
+		dispatcher가 반환받은 문자열이 view를 찾을때 어떤 근거로 찾을지 알려준다	 
+		bean으로 쓴걸 class화 해서 객체로 쓸 수 있다->container에 담겨진다.-->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" /> <!-- return값 앞에 붙는것 -->
+		<property name="suffix" value=".jsp" /> <!-- return값 뒤에 붙는것 -->
+		<property name="order" value="2" />
+	</bean>
+	
+	<!-- 어노테이션으로 설정해야만 되는, 디스패처->컨트롤러로 가기 전에 인터럽트를 걸어야할때 설정해야된다. -->
+	<mvc:annotation-driven />
+	<!-- 스프링 플러그인을 설치했기 때문에 namespaces 에서 mvc 체크해주면 된다. -->
+	<mvc:resources location="/resources/" mapping="/resources/**" />
+
+</beans>
