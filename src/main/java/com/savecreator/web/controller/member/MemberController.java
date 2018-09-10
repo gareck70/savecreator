@@ -13,12 +13,39 @@ import com.savecreator.web.entity.Question;
 @RequestMapping("/member/")
 public class MemberController {
 
-	
 	@RequestMapping("index")
 	public String main(Model model) {
-		
+
 		return "member.index";
 	}
-}
 
-	
+	@RequestMapping("join-email-info")
+	public String joinemailinfo() {
+
+		return "member.join-email-info";
+	}
+
+	@RequestMapping("join-email")
+	public String joinemail() {
+
+		return "member.join-email";
+	}
+
+	@RequestMapping("join-error")
+	public String joinerror() {
+
+		return "member.join-error";
+	}
+
+	@RequestMapping("join-reg")
+	public String joinreg() {
+
+		return "member.join-reg";
+	}
+
+	@RequestMapping("login")
+	public String login() {
+
+		return "member.login";
+	}
+}
