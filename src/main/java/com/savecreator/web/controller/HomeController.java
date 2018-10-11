@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.savecreator.web.entity.Question;
 
 @Controller
-@RequestMapping("/*")
+@RequestMapping("/")
 public class HomeController {
 
 	@RequestMapping("index")
 	public String main(Model model) {
 		
-		return "index";
+		return "home.index";
 	}
 	
 	@RequestMapping("/login")
 	public String login() {
 		
-		return "login";
+		return "home.login";
 	}
 	
 	/*@RequestMapping("type")

@@ -101,6 +101,7 @@ a {
 	}
 	#header.menu-show #login-info{
 		right: 0%;
+	     background-color: #FFF;
 	}
 		#header.menu-show:after{
 		opacity: 0.7;

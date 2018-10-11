@@ -20,36 +20,35 @@
 
 			<!-- name까지는 필요없다. 정보가 없으면 로그인, 받아온 정보가 있으면 로그아웃이 출력된다. -->
 			<%-- 				<c:if test="${empty pageContext.request.userPrincipal}">  --%>
-			<security:authorize access="!isAuthenticated()">
+			<%-- <security:authorize access="!isAuthenticated()">
 				<div class="auth-status">
 					<a href="/member/login">로그인</a>
 				</div>
 			</security:authorize>
-			<%-- 				</c:if> --%>
+							</c:if>
 			<security:authorize access="isAuthenticated()">
-				<%-- 				<c:if test="${not empty pageContext.request.userPrincipal}"> --%>
+								<c:if test="${not empty pageContext.request.userPrincipal}">
 				<div class="auth-status">
 					<a href="/member/logout"> <security:authentication
-							property="name" />로그아웃
-					</a>
+							property="name" />로그아웃</a>
 				</div>
 
-				<%-- </c:if> --%>
-			</security:authorize>
+				</c:if>
+			</security:authorize> --%>
 			<a href="/member/join">회원가입</a>
 			<security:authorize access="hasRole('TEACHER')">
 				<div class="notice">
-					<span>강사공지: </span><a href="">3</a>
-				</div>
+					<span>강사공지: </span><a href="">3</a></div>
+					<div class = "notice"><a href="">공지사항</a></div>
+				<div class = "notice"><a href="">Creator 목록</a></div>
+		
 			</security:authorize>
 			</div>
 		</section>
 		<section id="teacher-menu">
 			<h1 class="hidden">메인메뉴</h1>
-			<ul>
-
-				<li><a href="">Creator 목록</a></li>
-			</ul>
+			
+			
 		</section>
 	</aside>
 </header>
