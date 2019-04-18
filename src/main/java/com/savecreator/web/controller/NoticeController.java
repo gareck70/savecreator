@@ -12,6 +12,4 @@ public class NoticeController {
 		 
 		return "notice.notice-list";
 	}
-
-	
 }
