@@ -9,7 +9,7 @@ public class NoticeController {
 	
 	@RequestMapping("notice-list")
 	public String noticelist() {
-		
+		 
 		return "notice.notice-list"; 
 	}
 
