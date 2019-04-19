@@ -15,7 +15,7 @@ public class HomeController {
 
 	@RequestMapping("index")
 	public String main(Model model) {
-		
+		List<Board> list = boardSerivce.list();
 		return "home.index";
 	}
 	

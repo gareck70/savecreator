@@ -4,16 +4,10 @@ public class BoardReply {
 	private String replyId;
 	private String boardId;
 	private int depth;
-	private String reply_content;
-	private String reply_writer;
+	private String replyContent;
+	private String replyWriter;
 	private String password;
 	private String registerDatetime;
-	@Override
-	public String toString() {
-		return "BoardReply [replyId=" + replyId + ", boardId=" + boardId + ", depth=" + depth + ", reply_content="
-				+ reply_content + ", reply_writer=" + reply_writer + ", password=" + password + ", registerDatetime="
-				+ registerDatetime + "]";
-	}
 	public String getReplyId() {
 		return replyId;
 	}
@@ -32,17 +26,17 @@ public class BoardReply {
 	public void setDepth(int depth) {
 		this.depth = depth;
 	}
-	public String getReply_content() {
-		return reply_content;
+	public String getReplyContent() {
+		return replyContent;
 	}
-	public void setReply_content(String reply_content) {
-		this.reply_content = reply_content;
+	public void setReplyContent(String replyContent) {
+		this.replyContent = replyContent;
 	}
-	public String getReply_writer() {
-		return reply_writer;
+	public String getReplyWriter() {
+		return replyWriter;
 	}
-	public void setReply_writer(String reply_writer) {
-		this.reply_writer = reply_writer;
+	public void setReplyWriter(String replyWriter) {
+		this.replyWriter = replyWriter;
 	}
 	public String getPassword() {
 		return password;
@@ -56,4 +50,15 @@ public class BoardReply {
 	public void setRegisterDatetime(String registerDatetime) {
 		this.registerDatetime = registerDatetime;
 	}
+	@Override
+	public String toString() {
+		return "BoardReply [replyId=" + replyId + ", boardId=" + boardId + ", depth=" + depth + ", replyContent="
+				+ replyContent + ", replyWriter=" + replyWriter + ", password=" + password + ", registerDatetime="
+				+ registerDatetime + "]";
+	}
+
+	
 }
+	
+	
+	
