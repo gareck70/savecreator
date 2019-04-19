@@ -1,29 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <script type="text/javascript">
-	alert('Hello JavaScript');
 </script>
 
 <main>
-<table>
-	<tr>
-		<td><input type="hidden" />
-			<button>글수정</button>
-			<button>글삭제</button></td>
-	</tr>
-</table>
+<form>
+	<input type="hidden">
+	<div>
+		<table width="1200px">
+			<tr>
+				<td>
+					<button type="button">글 작성</button>
+				</td>
+			</tr>
+		</table>
+		<table border="1" width="1200px">
+			<tr>
+				<th width="50px">No</th>
+				<th width="850px">제목</th>
+				<th width="100px">작성자</th>
+				<th width="200px">작성일</th>
+			</tr>
+			<tr>
+		</table>
+	</div>
 
-<table borad="1" width="1200px">
-	<tr>
-		<td colspan="4"></td>
-	</tr>
-	<tr>
-		<td width="900px">제목 :</td>
-		<td>작성자 :</td>
-	</tr>
-	<tr>
-		<td colspan="2" valign="top"></td>
-	</tr>
-</table>
-https://huskdoll.tistory.com/m/792 << 요기 사이트
+</form>
 </main>

@@ -12,4 +12,10 @@ public class NoticeController {
 		 
 		return "notice.notice-list";
 	}
+	
+	@RequestMapping("notice-edit")
+	public String noticeedit() {
+		 
+		return "notice.notice-edit";
+	}
 }
