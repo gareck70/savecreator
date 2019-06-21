@@ -14,7 +14,9 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
 	protected Class<?>[] getServletConfigClasses() {
 		// TODO Auto-generated method stub
 		return new Class[] { 
-				ServletContextConfig.class
+				ServletContextConfig.class,
+				ServiceContextConfig.class
+				
 		};
 		}
 
